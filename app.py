@@ -94,7 +94,7 @@ if st.session_state.questions:
         with st.spinner("Evaluating..."):
             try:
                 # Evaluation logic
-                eval_model = genai.GenerativeModel("gemini-1.5-flash")
+                eval_model = genai.GenerativeModel("gemini-3.1-flash-lite-preview")
                 eval_prompt = f"""
                 Evaluate these answers for a {st.session_state.candidate_details['position']} role.
                 Answers: {user_answers}
