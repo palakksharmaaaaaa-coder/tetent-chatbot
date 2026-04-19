@@ -65,7 +65,7 @@ with st.expander("Candidate Information", expanded=not st.session_state.question
         if name and email and tech_stack:
             with st.spinner("Generating questions..."):
                 try:
-                    # Model name fixed to gemini-1.5-flash
+                    # Model name fixed to gemini-3.1-flash-lite-preview
                     model = genai.GenerativeModel('gemini-3.1-flash-lite-preview')
                     prompt = f"Generate exactly 5 technical interview questions for a {position} with {experience} years experience. Tech stack: {tech_stack}. Only output the questions."
                     response = model.generate_content(prompt)
