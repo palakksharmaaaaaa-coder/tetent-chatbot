@@ -2,3 +2,4 @@
 python-dotenv
 google-generativeai
 Faker==18.9.0
+nltk
