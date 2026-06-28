@@ -5,6 +5,19 @@ import streamlit as st
 import google.generativeai as genai
 from dotenv import load_dotenv
 from faker import Faker
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+
+# Process user input
+def preprocess(text):
+    tokens = word_tokenize(text.lower())
+    stop_words = set(stopwords.words('english'))
+    tokens = [t for t in tokens if t not in stop_words]
+    lemmatizer = WordNetLemmatizer()
+    tokens = [lemmatizer.lemmatize(t) for t in tokens]
+    return " ".join(tokens)
 
 # -------------------
 # Load Environment Variables
